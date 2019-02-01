@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 0.1</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        body, html{
+            color:#333;
+        }
+        :root{
+            --dark-bg-color: #333;
+            --mid-bg-color: #666 ;
+            --light-bg-color: #eee ;
+        }
+        .container {
+            display: grid;
+            max-width: 100%;
+
+            grid-template-areas:
+                "header header"
+                "content side"
+                "footer footer";
+
+            grid-template-columns: 1fr 18.75rem;
+            grid-template-rows: 4.375rem auto 4.375rem;
+            
+            height: 100vh;
+            
+        }
+
+        header{
+            display: flex;
+            grid-area: header;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        main {
+            display: flex;
+            grid-area: content;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--mid-bg-color); 
+        }
+
+        aside {
+            display: flex;
+            grid-area: side;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--light-bg-color); 
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: footer;
+        }
+
+        header, footer {
+            color:#fff;
+            background-color: var(--dark-bg-color); 
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                grid-template-areas:
+                "header"
+                "content"
+                "side"
+                "footer";
+
+                grid-template-columns: 100%;
+                grid-template-rows: 4.375rem auto auto 4.375rem;
+
+                height:100vh;
+            }
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            Header
+        </header>
+              
+        <main>
+            Main Content
+        </main>
+        
+        <aside>
+            Sidebar
+        </aside>
+        
+        <footer>
+            Footer
+        </footer>
+    </div>
+    
+</body>
+</html>
